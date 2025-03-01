@@ -1,1 +1,14 @@
-<p>detalils works!</p>
+<div class="zona1">
+  <div *ngIf="isLoading" style="color: #ffd321 ;">
+    Cargando detalles de la película...
+  </div>
+
+  <div *ngIf="!isLoading && errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!isLoading && pelicula">
+    <h2 style="color: #ffd321 ;">Detalles de la Película</h2>
+    <pre style="color: #fff;" >{{ pelicula | json }}</pre>
+  </div>
+</div>

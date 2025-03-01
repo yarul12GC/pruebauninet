@@ -14,6 +14,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./pages/detalils/detalils.component')
             },
             {
+                path: 'formulario',
+                loadComponent: () => import('./pages/formulario/formulario.component')
+            },
+            {
                 path: '',
                 redirectTo: 'peliculas',
                 pathMatch: 'full'

@@ -11,3 +11,13 @@
     box-shadow: 7px 13px 37px #000000;
   
 }
+.tex-label{
+
+    color: #fff;
+}
+.btn{
+    background-color: #ffd321;
+}
+.btn:disabled{
+    background-color: #ffe063;
+}

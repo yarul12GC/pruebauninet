@@ -1,12 +1,12 @@
 <div class="zona1">
-    <div *ngIf="isLoading">Cargando películas...</div>
+    <div *ngIf="isLoading" style="color: #ffd321 ;">Cargando películas...</div>
   
     <div *ngIf="!isLoading" class="container">
       <div class="row py-4">
         <div *ngFor="let movie of data; let i = index" class="col-12 col-md-4 mb-5">
           <div class="card zonacard">
             <div class="card-body">
-              <!-- Enlace dinámico con el índice (i) -->
+              
               <a [routerLink]="['/detalils', i + 1]">
                 <h5 class="card-title titlec text-center">{{ movie.title }}</h5>
               </a>
