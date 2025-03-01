@@ -1,75 +1,63 @@
 <div class="zona1">
-    <div class="container">
-      <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="tex-label text-center">Datos del Aspirante</h2>
-  
-            <!-- Nombre -->
-            <div class="form-group mb-2 mt-3">
-              <label for="nombre" class="form-label tex-label">Nombre:</label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="nombre"
-                id="nombre"
-              />
+  <div class="container container2">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="tex-label text-center">Datos del Aspirante</h2>
+
+          <!-- Nombre -->
+          <div class="form-group mb-2 mt-3">
+            <label for="nombre" class="form-label tex-label">Nombre:</label>
+            <input type="text" class="form-control" formControlName="nombre" id="nombre" />
 
 
-              <div *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched" class="text-danger">
-                <div *ngIf="formulario.get('nombre')?.errors?.['required']">
-                  El nombre es obligatorio.
-                </div>
-                <div *ngIf="formulario.get('nombre')?.errors?.['invalidTexto']">
-                  El nombre no debe contener números ni caracteres especiales.
-                </div>
+            <div *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched" class="text-danger">
+              <div *ngIf="formulario.get('nombre')?.errors?.['required']">
+                El nombre es obligatorio.
               </div>
-            </div>
-  
-            <!-- Apellido -->
-            <div class="form-group mb-2 mt-3">
-              <label for="apellido" class="form-label tex-label">Apellido:</label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="apellido"
-                id="apellido"
-              />
-
-
-              <div *ngIf="formulario.get('apellido')?.invalid && formulario.get('apellido')?.touched" class="text-danger">
-                <div *ngIf="formulario.get('apellido')?.errors?.['required']">
-                  El apellido es obligatorio.
-                </div>
-                <div *ngIf="formulario.get('apellido')?.errors?.['invalidTexto']">
-                  El apellido no debe contener números ni caracteres especiales.
-                </div>
-              </div>
-            </div>
-  
-            <!-- Fecha de nacimiento -->
-            <div class="form-group mb-2 mt-3">
-              <label for="fechaNacimiento" class="form-label tex-label">Fecha de nacimiento:</label>
-              <input
-                type="date"
-                class="form-control"
-                formControlName="fechaNacimiento"
-                id="fechaNacimiento"
-              />
-
-              <div *ngIf="formulario.get('fechaNacimiento')?.invalid && formulario.get('fechaNacimiento')?.touched" class="text-danger">
-                <div *ngIf="formulario.get('fechaNacimiento')?.errors?.['required']">
-                  La fecha de nacimiento es obligatoria.
-                </div>
-                <div *ngIf="formulario.get('fechaNacimiento')?.errors?.['menorDeEdad']">
-                  Debes ser mayor de 18 años.
-                </div>
+              <div *ngIf="formulario.get('nombre')?.errors?.['invalidTexto']">
+                El nombre no debe contener números ni caracteres especiales.
               </div>
             </div>
           </div>
-  
-          <button class="btn mt-3" type="submit" [disabled]="formulario.invalid">Validar</button>
+
+          <!-- Apellido -->
+          <div class="form-group mb-2 mt-3">
+            <label for="apellido" class="form-label tex-label">Apellido:</label>
+            <input type="text" class="form-control" formControlName="apellido" id="apellido" />
+
+
+            <div *ngIf="formulario.get('apellido')?.invalid && formulario.get('apellido')?.touched" class="text-danger">
+              <div *ngIf="formulario.get('apellido')?.errors?.['required']">
+                El apellido es obligatorio.
+              </div>
+              <div *ngIf="formulario.get('apellido')?.errors?.['invalidTexto']">
+                El apellido no debe contener números ni caracteres especiales.
+              </div>
+            </div>
+          </div>
+
+          <!-- Fecha de nacimiento -->
+          <div class="form-group mb-2 mt-3">
+            <label for="fechaNacimiento" class="form-label tex-label">Fecha de nacimiento:</label>
+            <input type="date" class="form-control" formControlName="fechaNacimiento" id="fechaNacimiento" />
+
+            <div *ngIf="formulario.get('fechaNacimiento')?.invalid && formulario.get('fechaNacimiento')?.touched"
+              class="text-danger">
+              <div *ngIf="formulario.get('fechaNacimiento')?.errors?.['required']">
+                La fecha de nacimiento es obligatoria.
+              </div>
+              <div *ngIf="formulario.get('fechaNacimiento')?.errors?.['menorDeEdad']">
+                Debes ser mayor de 18 años.
+              </div>
+            </div>
+          </div>
         </div>
-      </form>
-    </div>
+        
+          <button class="btn mb-3 mt-3" type="submit" [disabled]="formulario.invalid">Validar</button>
+
+
+      </div>
+    </form>
   </div>
+</div>

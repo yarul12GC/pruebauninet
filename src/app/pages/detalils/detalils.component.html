@@ -6,7 +6,7 @@
 
     <h1 class="tiulo1">{{ pelicula.title }}</h1>
 
-    <h2 class="tiulo1 text-center">Naves Espaciales</h2>
+    <h2 class="tiulo1 text-center mb-3">Naves Espaciales</h2>
     <div class="container">
       <div class="row">
         <div *ngFor="let starship of pelicula.starships" class="col-12 col-md-4 mb-5">
@@ -21,11 +21,11 @@
     </div>
 
 
-    <h2 class="tiulo1 text-center">Personajes</h2>
+    <h2 class="tiulo2 text-center mb-3">Personajes</h2>
     <div class="container">
       <div class="row">
         <div *ngFor="let character of pelicula.characters" class="col-12 col-md-4 mb-5">
-          <div class="card zonacard">
+          <div class="card zonacard2">
             <div class="card-body">
               <h5 class="card-title titlec text-center"> {{ character.name }}
               </h5>
@@ -36,11 +36,11 @@
     </div>
 
 
-    <h2 class="tiulo1">Planetas</h2>
+    <h2 class="tiulo3  text-center mb-3">Planetas</h2>
     <div class="container">
       <div class="row">
         <div *ngFor="let planet of pelicula.planets" class="col-12 col-md-4 mb-5">
-          <div class="card zonacard">
+          <div class="card zonacard3">
             <div class="card-body">
               <h5 class="card-title titlec text-center"> {{ planet.name }}
               </h5>
@@ -49,10 +49,6 @@
         </div>
       </div>
     </div>
-
-
-
-
   </div>
 
 </div>

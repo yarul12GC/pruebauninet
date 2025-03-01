@@ -1,6 +1,5 @@
 .zona1 {
-    margin-top: 40vh;
-    width:97%;
+    width: 97%;
     height: auto;
     background: rgb(30, 30, 30);
     margin: 0 auto;
@@ -9,15 +8,33 @@
     color: #343434;
     border-radius: 5px;
     box-shadow: 7px 13px 37px #000000;
-  
+
 }
-.tex-label{
+
+.tex-label {
 
     color: #fff;
 }
-.btn{
+
+.btn {
     background-color: #ffd321;
 }
-.btn:disabled{
+
+.btn:disabled {
     background-color: #ffe063;
+}
+
+.container2 {
+    width: 60%;
+}
+
+@media (min-width: 200px) and (max-width: 780px){
+    .container2 {
+        width:95%;
+    }
+    .zona1 {
+        width: 100%;
+        box-shadow: 0px 0px 0px #ffffff00;
+
+    }
 }

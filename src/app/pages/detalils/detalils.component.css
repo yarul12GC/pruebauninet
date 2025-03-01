@@ -1,6 +1,5 @@
 .zona1 {
-    margin-top: 40vh;
-    width:97%;
+    width: 97%;
     height: auto;
     background: rgb(30, 30, 30);
     margin: 0 auto;
@@ -9,16 +8,37 @@
     color: #ffffff;
     border-radius: 5px;
     box-shadow: 7px 13px 37px #000000;
-  
+
 }
-.tiulo1{
-    color: #ffe81b  ;
+
+.tiulo1 {
+    color: #ffe81b;
 }
-.zonacard{
+
+.tiulo2 {
+    color: rgb(26, 238, 210);
+}
+
+.tiulo3 {
+    color: rgb(26, 238, 111);
+}
+
+.zonacard {
     box-shadow: 10px 5px 5px rgba(238, 224, 26, 0.241);
 
 }
-.card{
+
+.zonacard2 {
+    box-shadow: 10px 5px 5px rgba(26, 238, 210, 0.241);
+
+}
+
+.zonacard3 {
+    box-shadow: 10px 5px 5px rgba(26, 238, 111, 0.241);
+
+}
+
+.card {
     background-color: #343434;
     color: #fff;
 }
