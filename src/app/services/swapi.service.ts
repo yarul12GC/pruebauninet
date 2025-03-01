@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +7,8 @@ export class SwapiService {
 
   constructor() { }
 
-  // Método para obtener las películas
+
+//se obtienen todas la peliculas
   public async getMovies(): Promise<any> {
     try {
       const response = await fetch(`${this.urlApi}films/`);
@@ -20,7 +20,8 @@ export class SwapiService {
     }
   }
 
-  // Método para obtener detalles de una película por ID
+
+  //se obtienen los detalles de las peliculas
   public async getDetails(id: number): Promise<any> {
     try {
       const response = await fetch(`${this.urlApi}films/${id}/`);

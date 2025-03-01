@@ -6,8 +6,19 @@
     margin: 0 auto;
     padding: 20px;
     margin-top: 10px;
-    color: #343434;
+    color: #ffffff;
     border-radius: 5px;
     box-shadow: 7px 13px 37px #000000;
   
+}
+.tiulo1{
+    color: #ffe81b  ;
+}
+.zonacard{
+    box-shadow: 10px 5px 5px rgba(238, 224, 26, 0.241);
+
+}
+.card{
+    background-color: #343434;
+    color: #fff;
 }

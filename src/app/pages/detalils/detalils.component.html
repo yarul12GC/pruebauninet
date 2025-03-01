@@ -1,14 +1,58 @@
 <div class="zona1">
-  <div *ngIf="isLoading" style="color: #ffd321 ;">
-    Cargando detalles de la película...
+  <div *ngIf="isLoading">Cargando...</div>
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <div *ngIf="pelicula && !isLoading">
+
+    <h1 class="tiulo1">{{ pelicula.title }}</h1>
+
+    <h2 class="tiulo1 text-center">Naves Espaciales</h2>
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let starship of pelicula.starships" class="col-12 col-md-4 mb-5">
+          <div class="card zonacard">
+            <div class="card-body">
+              <h5 class="card-title titlec text-center">{{ starship.name }}
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <h2 class="tiulo1 text-center">Personajes</h2>
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let character of pelicula.characters" class="col-12 col-md-4 mb-5">
+          <div class="card zonacard">
+            <div class="card-body">
+              <h5 class="card-title titlec text-center"> {{ character.name }}
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <h2 class="tiulo1">Planetas</h2>
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let planet of pelicula.planets" class="col-12 col-md-4 mb-5">
+          <div class="card zonacard">
+            <div class="card-body">
+              <h5 class="card-title titlec text-center"> {{ planet.name }}
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
   </div>
 
-  <div *ngIf="!isLoading && errorMessage">
-    {{ errorMessage }}
-  </div>
-
-  <div *ngIf="!isLoading && pelicula">
-    <h2 style="color: #ffd321 ;">Detalles de la Película</h2>
-    <pre style="color: #fff;" >{{ pelicula | json }}</pre>
-  </div>
 </div>

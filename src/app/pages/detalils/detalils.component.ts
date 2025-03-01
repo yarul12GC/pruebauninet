@@ -37,6 +37,27 @@ export default class DetalilsComponent implements OnInit {
     try {
       this.pelicula = await this.swapiService.getDetails(id);
       console.log('Detalles de la película:', this.pelicula);
+
+      const { characters, planets, starships} = this.pelicula;
+      
+      const fetchData = async (urls: string[]) => 
+        await Promise.all(urls.map(url => fetch(url).then(res => res.json())));
+      
+      const [charactersData, planetsData, starshipsData,] = await Promise.all([
+        fetchData(characters),
+        fetchData(planets),
+        fetchData(starships)
+      ]);
+
+      const sortByName = (arr: any[]) => arr.sort((a, b) => a.name.localeCompare(b.name));
+
+      this.pelicula = {
+        ...this.pelicula,
+        characters: sortByName(charactersData),
+        planets: sortByName(planetsData),
+        starships: sortByName(starshipsData),
+      
+      };
     } catch (error) {
       this.errorMessage = 'Error al obtener los detalles de la película.';
       console.error(error);
