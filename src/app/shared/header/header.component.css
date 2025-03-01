@@ -1,0 +1,15 @@
+.bg-header{
+    background-color: black;
+    color: #fff;
+}
+
+.buton1{
+    color: #fff;
+}
+.buton1:hover{
+    background-color: #787878;
+    border-radius: 0px;
+}
+.sech2{
+text-align: left;}
+
