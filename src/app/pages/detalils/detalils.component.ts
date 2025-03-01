@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { SwapiService } from '../../services/swapi.service';
 
@@ -10,12 +9,12 @@ import { SwapiService } from '../../services/swapi.service';
   templateUrl: './detalils.component.html',
   styleUrls: ['./detalils.component.css'],
   providers: [SwapiService], 
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
 })
 export default class DetalilsComponent implements OnInit {
-  pelicula: any; // Variable para almacenar la película
-  isLoading: boolean = true; // Para controlar la carga de datos
-  errorMessage: string = ''; // Mensaje de error, si ocurre
+  pelicula: any = null; 
+  isLoading: boolean = true; 
+  errorMessage: string = ''; 
 
   constructor(
     private route: ActivatedRoute,
@@ -23,22 +22,26 @@ export default class DetalilsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Obtener el índice de la película desde la URL
     const index = this.route.snapshot.paramMap.get('id');
     
     if (index !== null) {
-      // Llamar al servicio para obtener los detalles de la película
-      this.swapiService.getDetails(Number(index)).subscribe(
-        (data) => {
-          // Almacenar los detalles de la película
-          this.pelicula = data;
-          this.isLoading = false;
-        },
-        (error) => {
-          this.errorMessage = 'Error al obtener los detalles de la película.';
-          this.isLoading = false;
-        }
-      );
+      this.obtenerDetalles(Number(index)); 
+    } else {
+      this.errorMessage = 'ID de película no encontrado.';
+      this.isLoading = false;
+    }
+  }
+
+  async obtenerDetalles(id: number): Promise<void> {
+    this.isLoading = true;
+    try {
+      this.pelicula = await this.swapiService.getDetails(id);
+      console.log('Detalles de la película:', this.pelicula);
+    } catch (error) {
+      this.errorMessage = 'Error al obtener los detalles de la película.';
+      console.error(error);
+    } finally {
+      this.isLoading = false;
     }
   }
 }
